@@ -1,1 +1,146 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonio Castro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-2.css">
+    <link rel="stylesheet" href="styles-3.css">
+</head>
+
+<body>
+    <script src="script1.js"></script>
+
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#index">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skill">Skills</a></li>           
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="index">
+            <div class="container home-container">
+                <div class="info">
+                    <p class="greeting">Hello I'm</p> 👋
+                    <h1>Antonio Castro</h1>
+                    <p>I am a <span id="typewriter"></span><span id="cursor">|</span></p>
+
+                    <script>
+                        function sleep(ms) {
+                            return new Promise(resolve => setTimeout(resolve, ms));
+                        }
+
+                        const phrases = ["Cloud Engineer", "Cloud Architect"];
+                        const el = document.getElementById("typewriter");
+                        let sleepTime = 50;
+                        let curPhraseIndex = 0;
+
+                        const writeLoop = async () => {
+                            while (true) {
+                                let curWord = phrases[curPhraseIndex];
+
+                                for (let i = 0; i < curWord.length; i++) {
+                                    el.innerText = curWord.substring(0, i + 1);
+                                    await sleep(sleepTime);
+                                }
+
+                                await sleep(sleepTime * 10);
+
+                                for (let i = curWord.length; i > 0; i--) {
+                                    el.innerText = curWord.substring(0, i - 1);
+                                    await sleep(sleepTime);
+                                }
+
+                                await sleep(sleepTime * 5);
+
+                                curPhraseIndex = (curPhraseIndex + 1) % phrases.length;
+                            }
+                        };
+
+                        writeLoop();
+                    </script>
+
+                    <p style="margin-top: 30px;"></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:"></a></p>
+                    <p><i class="fas fa-phone"></i> +1 (774) 251 - 8434</p>
+                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/">LinkedIn</a></p>
+                    <p><i class="fab fa-github"></i> <a href="https://www.github.com/castro369">GitHub</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i></p>
+                    <p>
+                        <a href="https://www.github.com/castro369" target="_blank" class="icon-link">
+                            <i class="fab fa-github contact-icon"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/" target="_blank" class="icon-link">
+                            <i class="fab fa-linkedin contact-icon"></i>
+                        </a>
+                    </p>
+                </div>
+
+                <div class="profile-pic">
+                    <img src="images/t1.jpeg" alt="Antonio Castro">
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="about-section">
+                <div class="left-column">
+                    <h1>About me...</h1>
+                    <p>Demo</p>
+                </div>
+                <div class="right-column">
+                    <h1>Career Goals:</h1>
+                    <p></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="container">
+                <h1>My Education</h1>
+                <div class="education-entry">
+                    <div class="education-text">
+                        <h2>University of Greenwich</h2>
+                        <p class="degree">Bachelors in Computer Science</p>
+                        <p class="year">Graduation: May 2021</p>
+                    </div>
+                    <div class="certificate">
+                        <img src="images/Degree.png" alt="Education Certificate">
+                        <a href="images/Degree.pdf" class="pdf-view-button" target="_blank">View</a>
+                    </div>
+                </div>
+                <div class="animated-line"></div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="exp_container">
+                <div class="section-title-2">Experience</div>
+                <div class="experience-entry">
+                    <img src="images/logo.jpg" alt="Logo">
+                    <div class="experience-details">
+                        <h2>Neural Concept</h2>
+                        <p>Cloud Solutions Architect<br>Nov 2023 - Present<br>Zürich, Zürich, Switzerland</p>
+                        <ul>
+                            <li>Customer Deployments</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Repeat for other experiences -->
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
