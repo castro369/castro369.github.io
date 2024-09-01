@@ -1,0 +1,388 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3, p {
+    color: #ffffff; /* Set default text color */
+    margin: 0; /* Reset default margins */
+    padding: 0; /* Reset default padding */
+}
+
+a {
+    text-decoration: none; /* Removes underline */
+    color: #ffffff; /* Default link color */
+}
+
+a:hover {
+    color: #ccc; /* Hover state color */
+}
+
+header {
+    background: #333;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+    box-sizing: border-box;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+header.scrolled {
+    background-color: #333;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0; /* Reset default padding */
+    margin: 0; /* Reset default margin */
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: inline-block;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a.active {
+    color: #0376fa;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+.main {
+    padding-top: 60px; /* To prevent content from being hidden behind the fixed header */
+}
+
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0;
+}
+
+.info {
+    flex-basis: 50%;
+}
+
+.info i {
+    margin-right: 8px; /* Space between icon and text */
+    color: #ffffff;
+}
+
+.profile-pic {
+    flex-basis: 50%;
+    text-align: right;
+    margin-top: 90px;
+}
+
+.profile-pic img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 100%;
+    border: 3px solid #ffffff;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+}
+
+.icon-link {
+    font-size: 20px;
+    margin-right: 10px;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.icon-link:hover {
+    color: rgb(0, 106, 255);
+}
+
+.greeting {
+    display: inline-block;
+    background-color: #21C87A;
+    color: #ffffff;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.info h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#typewriter, #cursor {
+    color: #0072ef;
+    font-weight: bold;
+}
+
+#cursor {
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+#about {
+    padding: 100px 20px 50px;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    min-height: 50vh;
+}
+
+#about h1 {
+    font-size: 3em;
+}
+
+.about-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-column, .right-column {
+    width: 50%;
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+    }
+    .left-column, .right-column {
+        width: 100%;
+    }
+}
+
+#education {
+    padding: 100px 20px 50px;
+    background-color: #121212;
+    min-height: 100vh;
+}
+
+#education h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.education-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.education-text, .certificate {
+    width: 48%;
+}
+
+.certificate img {
+    width: 70%;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.certificate .pdf-view-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 4px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.certificate .pdf-view-button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .education-entry {
+        flex-direction: column;
+        align-items: center;
+    }
+    .education-text, .certificate {
+        width: 100%;
+    }
+    .certificate img {
+        width: 80%;
+    }
+}
+
+.animated-line {
+    height: 2px;
+    background: #007bff;
+    margin: 50px 0;
+    width: 0;
+    animation: drawLine 1s ease-out forwards;
+}
+
+@keyframes drawLine {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.skills-container, .projects-container {
+    background-color: #121212;
+    color: #ffffff;
+    padding: 35px;
+    text-align: center;
+}
+
+.skills-title, .projects-title {
+    font-size: 2.5em;
+    margin: 40px 0;
+}
+
+.skills-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.skills-column {
+    width: 30%;
+    margin-right: 2%;
+}
+
+.skills-column:nth-child(3n) {
+    margin-right: 0;
+}
+
+.skill {
+    background-color: #121212;
+    margin-bottom: 30px;
+    position: relative;
+    padding: 5px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.skill-bar {
+    width: 100%;
+    background-color: #ffffff;
+    height: 10px;
+    margin: auto;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-percentage {
+    background-color: #0f62fe;
+    height: 10px;
+    width: 75%;
+    border-radius: 5px 0 0 5px;
+}
+
+.section-title-2 {
+    font-size: 2.5em;
+    background-color: #0f62fe;
+    color: #ffffff;
+    text-align: center;
+    margin: 40px 0;
+    padding: 5px 10px;
+    margin-top: 100px;
+}
+
+.experience-entry {
+    margin: 10px 10px 5px 10px;
+    padding: 15px;
+    text-align: left;
+    background-color: #112233;
+    color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: flex-start;
+}
+
+.experience-entry img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.experience-details {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .experience-entry {
+        flex-direction: column;
+        align-items: center;
+    }
+    .experience-entry img {
+        margin-bottom: 20px;
+    }
+}
+
+.certification-card {
+    background-color: #1C1C1C;
+    border-radius: 5px;
+    padding: 1rem;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.certification-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.certification-details h3 {
+    font-size: 1
